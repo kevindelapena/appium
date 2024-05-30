@@ -22,16 +22,17 @@ public class BaseTest {
     public AndroidDriver driver;
    @BeforeClass
     public void ConfigureAppium() throws MalformedURLException {
-        service = new AppiumServiceBuilder().withAppiumJS(new File("C://Users//kevin//AppData//Roaming//npm//node_modules//appium//build//lib//main.js"))
+//       service = new AppiumServiceBuilder().withAppiumJS(new File("C://Users//kevin//AppData//Roaming//npm//node_modules//appium//build//lib//main.js"))
+       service = new AppiumServiceBuilder().withAppiumJS(new File("C://Users//kevin.delapena//AppData//Roaming//npm//node_modules//appium//build//lib//main.js"))
                 .withIPAddress("127.0.0.1")
 //                .usingPort(4723).build();
                 .usingAnyFreePort().build();
 
-        service.start();
+//        service.start();
 
         UiAutomator2Options options = new UiAutomator2Options();
         options.setDeviceName("Nexus 5X API 33");
-        options.setApp("C://Users//kevin//IdeaProjects//appium//src//test//java//resources//ApiDemos-debug.apk");
+        options.setApp("C://Users//kevin.delapena//IdeaProjects//appium//src//test//java//resources//ApiDemos-debug.apk");
         driver = new AndroidDriver(new URL("http://127.0.0.1:4723"), options);
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
 
